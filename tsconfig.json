@@ -12,6 +12,7 @@
       "@config": ["config/index"],
       "@loaders/*": ["loaders/*"],
       "@models/*": ["models/*"],
+      "@types/*": ["types/*"],
       "@common/*": ["common/*"]
     },
     "resolveJsonModule": true,
