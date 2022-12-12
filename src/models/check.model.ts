@@ -1,5 +1,6 @@
 import { Schema, Document, model } from 'mongoose';
 import slugify from 'slugify';
+import { User, UserAttributes, UserDocument } from '@models/user.model';
 
 enum protocol {
   HTTP = 'HTTP',
@@ -10,7 +11,7 @@ enum protocol {
 interface CheckAttributes {
   _id: string;
   slug: string;
-  userId: string;
+  userId: UserAttributes['_id'] | UserDocument;
   name: string;
   url: string;
   protocol: protocol;
