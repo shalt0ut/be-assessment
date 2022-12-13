@@ -1,15 +1,9 @@
 import Application from '@loaders/app';
-import { Router, Request, Response, NextFunction } from 'express';
-const appRouters = [
-  {
-    route: '/',
-    router: Router().get(
-      '/',
-      (req: Request, res: Response, next: NextFunction) =>
-        res.status(200).json({ message: 'Hello from index' })
-    ),
-  },
-];
+
+import checkController from '@app/check/check.controller';
+
+const appRouters = [{ route: '/check', router: checkController.router }];
+
 const app = new Application();
 app.setApiRouters(appRouters);
 
